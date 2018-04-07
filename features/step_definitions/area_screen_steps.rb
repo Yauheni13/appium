@@ -55,3 +55,10 @@ end
 When(/^Iselect "([^"]*)" from the left column$/) do |value|
   find_element(id:"radio_group_from").find_element(xpath: "//android.widget.RadioButton[@text='#{value}']").click
 end
+
+Then(/^I get "([^"]*)" in From field$/) do |value|
+  actual_value = find_element(id:"header_value_from").text
+  if actual_value != value
+    fail("Expected value was #{value} but Actual value is #{actual_value}")
+  end
+end
