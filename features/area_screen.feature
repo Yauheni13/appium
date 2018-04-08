@@ -13,7 +13,7 @@ Feature: User is able to convert area units
     And I see "Sq Kilometre" in To header
     And I get "0" in To field
 
-  @wip
+
   Scenario Outline: User is able to convert default units
     Given I click on clear button
     Then I get "" in From field
