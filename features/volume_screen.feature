@@ -9,7 +9,7 @@ Feature: User is able to convert Volume units
     When I swipe in the menu
     Then I see app menu
 
-  @wip
+
   Scenario Outline:
     When I swipe in the menu
     And I select "<target>" from menu
@@ -18,11 +18,24 @@ Feature: User is able to convert Volume units
     Examples:
     |target|result|
     |Time  |Time  |
-    #|Area  |Area  |
-    #|Cooking|Cooking|
-    #|Currency|Currency|
-    #|Digital Storage|Digital Storage|
-    #|Energy         |Energy         |
-    #|Fuel Consumption|Fuel Consumption|
-    #|Length / Distance|Length / Distance|
-    #|Volume|Volume|
+    |Area  |Area  |
+    |Cooking|Cooking|
+    |Digital Storage|Digital Storage|
+    |Volume|Volume|
+
+  @wip
+    Scenario Outline:
+      Given I swipe in the menu
+      And I select "Digital Storage" from menu
+      And I land on screen that has text: "Digital Storage"
+      And I select "Kilobit" from the left column
+      And I click on clear button
+      When I enter "20" to From field
+      And I select "<target>" from the right column
+      Then I get "<result>" in To field
+
+    Examples:
+    |target|result|
+    |Bit   |20480 |
+    |Kilobit|20   |
+    |Megabit|0.0195|

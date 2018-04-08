@@ -31,6 +31,7 @@ end
 
 When(/^I enter "([^"]*)" to From field$/) do |value|
   find_element(id:"header_value_from").send_keys(value)
+  sleep 1
 end
 
 Then(/^I get "([^"]*)" in To field$/) do |value|
@@ -52,8 +53,14 @@ And(/^I press "([^"]*)" on soft keyboard$/) do |value|
     end
 end
 
-When(/^Iselect "([^"]*)" from the left column$/) do |value|
+When(/^I select "([^"]*)" from the left column$/) do |value|
   find_element(id:"radio_group_from").find_element(xpath: "//android.widget.RadioButton[@text='#{value}']").click
+  sleep 1
+end
+
+And(/^I select "([^"]*)" from the right column$/) do |value|
+  find_element(id:"radio_group_to").find_element(xpath: "//android.widget.RadioButton[@text='#{value}']").click
+  sleep 1
 end
 
 Then(/^I get "([^"]*)" in From field$/) do |value|

@@ -35,6 +35,6 @@ Feature: User is able to convert area units
 
 
     Scenario: User is able to select item from left column
-      When Iselect "Hectare" from the left column
+      When I select "Hectare" from the left column
       Then I see "Hectare" in From header
       And I get "10000" in To field
