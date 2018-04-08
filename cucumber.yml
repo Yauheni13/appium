@@ -1,0 +1,7 @@
+area: -t @area --format html --out area_report.html
+volume: -t @volume --format html --out volume_report.html
+wip: -t @wip --format html --out wip_report.html
+
+any: -t @area,@start,@volume,@wip --format html --out any_report.html
+wip_volume: -t @volume -t @wip --format html --out wip_volume_report.html --format pretty
+wip_area: -t @area -t @wip --format html --out wip_area_report.html --format pretty

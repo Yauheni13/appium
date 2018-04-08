@@ -1,4 +1,4 @@
-@start
+  @start
   Feature: Start features test cases
 
     Scenario: User is able to dismiss help

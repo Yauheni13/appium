@@ -4,10 +4,10 @@ Feature: User is able to convert area units
   Background:
     Given I click on Got it button
 
-
+  @wip
   Scenario: User is able to swap values
     Given I see "Sq Kilometre" in From header
-    And I see "Sq Metre" in To header
+    And I see "Sq Kilometre" in To header
     When I click on swap button
     Then I see "Sq Metre" in From header
     And I see "Sq Kilometre" in To header
@@ -32,7 +32,6 @@ Feature: User is able to convert area units
       When I click on From field
       And I press "245" on soft keyboard
       Then I get "245000000" in To field
-
 
     Scenario: User is able to select item from left column
       When I select "Hectare" from the left column
