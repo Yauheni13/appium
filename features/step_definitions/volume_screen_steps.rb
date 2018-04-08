@@ -17,6 +17,12 @@ And(/^I select "([^"]*)" from menu$/) do |value|
   #find_element(id:"design_navigation_view").find_element(xpath: "//android.widget.CheckedTextView[@text='#{value}']").click
 
   element = Appium::TouchAction.new.scroll_to_exact("#{value}",0)
+  #element.click
+
+  action =  Appium::TouchAction.new.swipe(start_x: 0.5,start_y: 0.1,end_x: 0.5,end_y: 0.8,duration: 500)
+  action.perform
+
+  element = Appium::TouchAction.new.scroll_to_exact("#{value}",0)
   element.click
 
 end
