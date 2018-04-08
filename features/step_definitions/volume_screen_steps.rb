@@ -10,9 +10,13 @@ Then(/^I see app menu$/) do
 end
 
 And(/^I select "([^"]*)" from menu$/) do |value|
-  until exists {find_element(id:"design_navigation_view").find_element(xpath: "//android.widget.CheckedTextView[@text='#{value}']")}do
-   action =  Appium::TouchAction.new.swipe(start_x: 0.5,start_y: 0.3,end_x: 0.5,end_y: 0.2,duration: 500)
-   action.perform
-  end
-  find_element(id:"design_navigation_view").find_element(xpath: "//android.widget.CheckedTextView[@text='#{value}']").click
+  #until exists {find_element(id:"design_navigation_view").find_element(xpath: "//android.widget.CheckedTextView[@text='#{value}']")}do
+   #action =  Appium::TouchAction.new.swipe(start_x: 0.5,start_y: 0.3,end_x: 0.5,end_y: 0.2,duration: 500)
+   #action.perform
+  #end
+  #find_element(id:"design_navigation_view").find_element(xpath: "//android.widget.CheckedTextView[@text='#{value}']").click
+
+  element = Appium::TouchAction.new.scroll_to_exact("#{value}",0)
+  element.click
+
 end
